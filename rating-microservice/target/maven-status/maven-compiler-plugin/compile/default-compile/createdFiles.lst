@@ -1,0 +1,8 @@
+service\data\domain\entity\Product.class
+service\data\repositories\UserRepository.class
+service\data\repositories\RatingRepository.class
+service\data\domain\entity\User.class
+service\Application.class
+service\data\repositories\ProductRepository.class
+service\config\GraphDatabaseConfiguration.class
+service\data\domain\rels\Rating.class

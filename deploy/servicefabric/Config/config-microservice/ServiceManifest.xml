@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="config-microservice" Version="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+    <ServiceTypes>
+        <StatelessServiceType ServiceTypeName="config-microservice" UseImplicitHost="true" />
+
+    </ServiceTypes>
+
+    <CodePackage Name="code" Version="1.0">
+        <EntryPoint>
+            <ExeHost>
+                <Program>jre/bin/java.exe</Program>
+                <Arguments>-Djava.security.egd=file:/dev/./urandom -jar config-microservice-0.1.0.jar  --spring.profiles.active=cloud --cloud_host=movies-servicefabric.eastus.cloudapp.azure.com</Arguments>
+                <WorkingFolder>CodeBase</WorkingFolder>
+
+            </ExeHost>
+        </EntryPoint>
+    </CodePackage>
+    <Resources>
+        <Endpoints>
+            <Endpoint Name="config-microserviceTypeEndpoint" Protocol="http" Port="8888" Type="Input" />
+        </Endpoints>
+    </Resources>
+</ServiceManifest>

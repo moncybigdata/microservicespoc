@@ -1,0 +1,56 @@
+--- 
+config:
+  image: stans/config-microservice
+  hostname: configServer
+  links:
+    - discovery
+  ports:
+    - "8888:8888"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+discovery:
+  image: stans/discovery-microservice
+  hostname: discovery
+  ports:
+    - "8761:8761"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+movie:
+  hostname: movie
+  image: stans/movie-microservice
+  links:
+    - discovery
+    - config
+  ports:
+    - "9006:9006"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+moviesui:
+  image: stans/ui-search
+  links:
+    - discovery
+    - config
+  ports:
+    - "1111:1111"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+rating:
+  hostname: rating
+  image: stans/rating-microservice
+  links:
+    - discovery
+    - config
+  ports:
+    - "9004:9004"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+user:
+  hostname: user
+  image: stans/user-microservice
+  links:
+    - discovery
+    - config
+  ports:
+     - "9000:9000"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker

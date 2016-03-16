@@ -1,0 +1,43 @@
+---
+config:
+  image: stans/config-microservice
+  ports:
+    - "8888:8888"
+  environment:
+    - SPRING_PROFILES_ACTIVE=cloud
+    - cloud_host=microsvcspocagents.eastus.cloudapp.azure.com
+discovery:
+  image: stans/discovery-microservice
+  ports:
+    - "8761:8761"
+  environment:
+    - SPRING_PROFILES_ACTIVE=cloud
+    - cloud_host=microsvcspocagents.eastus.cloudapp.azure.com
+movie:
+  image: stans/movie-microservice
+  ports:
+    - "9006:9006"
+  environment:
+    - SPRING_PROFILES_ACTIVE=cloud
+    - cloud_host=microsvcspocagents.eastus.cloudapp.azure.com
+moviesui:
+  image: stans/ui-search
+  ports:
+    - "80:1111"
+  environment:
+    - SPRING_PROFILES_ACTIVE=cloud
+    - cloud_host=microsvcspocagents.eastus.cloudapp.azure.com
+rating:
+  image: stans/rating-microservice
+  ports:
+    - "9004:9004"
+  environment:
+    - SPRING_PROFILES_ACTIVE=cloud
+    - cloud_host=microsvcspocagents.eastus.cloudapp.azure.com
+user:
+  image: stans/user-microservice
+  ports:
+     - "9000:9000"
+  environment:
+    - SPRING_PROFILES_ACTIVE=cloud
+    - cloud_host=microsvcspocagents.eastus.cloudapp.azure.com

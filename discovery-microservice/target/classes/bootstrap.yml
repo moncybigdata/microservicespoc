@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: cloud
+---
+spring:
+  profiles: cloud
+  application:
+    name: discovery
+  cloud:
+    config:
+       uri: http://${cloud_host}:8888/
+       enabled: false
+encrypt:
+  failOnError: false
+---
+spring:
+  profiles: docker
+  application:
+    name: discovery
+  cloud:
+    config:
+      uri: http://192.168.99.100:8888
+encrypt:
+  failOnError: false

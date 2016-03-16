@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="config-microservice" />
+        <module name="discovery" />
+        <module name="movie-microservice" />
+        <module name="rating-microservice" />
+        <module name="ui-search" />
+        <module name="user-microservice" />
+      </profile>
+      <profile default="false" name="Annotation profile for discovery-microservice" enabled="true">
+        <sourceOutputDir name="../discovery/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../discovery/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="discovery-microservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-microservice" target="1.8" />
+      <module name="discovery" target="1.8" />
+      <module name="discovery-microservice" target="1.8" />
+      <module name="MicroservicesPoC" target="1.8" />
+      <module name="movie-microservice" target="1.8" />
+      <module name="rating-microservice" target="1.8" />
+      <module name="ui-search" target="1.8" />
+      <module name="user-microservice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

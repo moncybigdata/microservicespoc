@@ -1,0 +1,54 @@
+spring:
+  profiles:
+    active: cloud
+---
+spring:
+  profiles: cloud
+  application:
+    name: configServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kbastani/spring-boot-microservice-config
+encrypt:
+  failOnError: false
+eureka:
+  instance:
+    hostname: ${cloud_host}
+    nonSecurePort: 8888
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${cloud_host}:8761/eureka/
+info:
+  description: Config Server
+  url: https://github.com/kbastani/spring-cloud-microservice-example
+---
+spring:
+  profiles: docker
+  application:
+    name: configServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kbastani/spring-boot-microservice-config
+encrypt:
+  failOnError: false
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+    hostname: configServer
+    preferIpAddress: true
+    defaultZone: http://discovery:8761/eureka/
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+info:
+  description: Config Server
+  url: https://github.com/kbastani/spring-cloud-microservice-example

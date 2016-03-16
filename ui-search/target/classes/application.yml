@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: cloud
+---
+spring:
+  profiles: cloud
+server:
+  port: 1111
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${cloud_host}:8761/eureka/
+  instance:
+    hostname: ${cloud_host}
+    nonSecurePort: 1111
+ribbon:
+  eureka:
+    enabled: true
+---
+spring:
+  profiles: docker
+server:
+  port: 1111
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+ribbon:
+  eureka:
+    enabled: true

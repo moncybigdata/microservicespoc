@@ -1,0 +1,7 @@
+service\data\repositories\UserRepository.class
+service\data\config\CouchbaseConfiguration.class
+service\data\config\CachingConfiguration$1.class
+service\data\config\CachingConfiguration.class
+service\data\domain\entity\User.class
+service\Application$1.class
+service\Application.class

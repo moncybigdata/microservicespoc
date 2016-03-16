@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: docker
+---
+spring:
+  profiles: cloud
+server:
+  port: 9000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${cloud_host}:8761/eureka/
+  instance:
+    hostname: ${cloud_host}
+    nonSecurePort: 9000
+ribbon:
+  eureka:
+    enabled: true
+aws:
+  s3:
+    url: https://s3.amazonaws.com/dataset-demos
+---
+spring:
+  profiles: docker
+server:
+  port: 9000
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+ribbon:
+  eureka:
+    enabled: true
+aws:
+  s3:
+    url: https://s3.amazonaws.com/dataset-demos
