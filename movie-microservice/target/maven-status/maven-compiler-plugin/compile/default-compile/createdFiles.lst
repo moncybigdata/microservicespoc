@@ -1,5 +1,7 @@
+io\github\stansa\microservices\movies\service\data\repositories\MovieRepository.class
+io\github\stansa\microservices\movies\service\Application.class
 io\github\stansa\microservices\movies\service\data\domain\Genre.class
 io\github\stansa\microservices\movies\service\data\domain\Movie.class
-io\github\stansa\microservices\movies\service\data\repositories\MovieRepository.class
+io\github\stansa\microservices\movies\service\config\TopicPublisher.class
 io\github\stansa\microservices\movies\service\config\ApplicationConfig.class
-io\github\stansa\microservices\movies\service\Application.class
+io\github\stansa\microservices\movies\service\config\MessageStoreDetails.class

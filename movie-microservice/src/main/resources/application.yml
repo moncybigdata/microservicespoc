@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: docker
+    active: cloud
 ---
 spring:
   profiles: cloud
@@ -13,18 +13,19 @@ spring:
 server:
   port: 9006
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${cloud_host}:8761/eureka/
   instance:
     hostname: ${cloud_host}
     nonSecurePort: 9006
 ribbon:
   eureka:
     enabled: true
+namespace:
+  host: testjms1001.servicebus.windows.net
+  username: ReadWrite
+  password: BTr6/sSB6TfXwGUvKiaLZjpzfuvOY8m1XxPEawB864E=
 ---
 spring:
-  profiles: docker
+  profiles: local
   jpa:
     show_sql: false
     hibernate:
@@ -34,13 +35,12 @@ spring:
 server:
   port: 9006
 eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
   instance:
     preferIpAddress: true
 ribbon:
   eureka:
     enabled: true
+namespace:
+  host: testjms1001.servicebus.windows.net
+  username: ReadWrite
+  password: BTr6/sSB6TfXwGUvKiaLZjpzfuvOY8m1XxPEawB864E=

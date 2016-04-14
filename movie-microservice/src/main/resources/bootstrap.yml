@@ -5,17 +5,17 @@ spring:
 spring:
   profiles: cloud
   application:
-    name: movie
+    name: location
   cloud:
      uri: http://${cloud_host}:8888/
-     enabled: false
+     enabled: true
 encrypt:
   failOnError: false
 ---
 spring:
-  profiles: docker
+  profiles: local
   application:
-    name: movie
+    name: location
   cloud:
     config:
       uri: http://configserver:8888

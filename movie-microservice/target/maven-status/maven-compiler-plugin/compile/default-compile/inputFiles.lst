@@ -1,5 +1,7 @@
 C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\data\domain\Genre.java
 C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\Application.java
+C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\config\MessageStoreDetails.java
 C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\data\domain\Movie.java
+C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\config\TopicPublisher.java
 C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\data\repositories\MovieRepository.java
 C:\Users\stsantia\IdeaProjects\MicroservicesPoC\movie-microservice\src\main\java\io\github\stansa\microservices\movies\service\config\ApplicationConfig.java

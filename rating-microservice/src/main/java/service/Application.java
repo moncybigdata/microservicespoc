@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.hateoas.hal.Jackson2HalModule;
 import service.config.GraphDatabaseConfiguration;
+import service.config.TopicReceiver;
 import service.data.domain.entity.Product;
 import service.data.domain.entity.User;
 import service.data.domain.rels.Rating;
@@ -37,6 +38,9 @@ public class Application {
 
     @Value("${neo4j.bootstrap}")
     Boolean bootstrap;
+
+    @Autowired
+    private TopicReceiver topicReceiver;
 
     public static void main(String[] args) {
         System.setProperty("org.neo4j.rest.read_timeout", "250");

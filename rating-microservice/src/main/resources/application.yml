@@ -27,6 +27,10 @@ eureka:
 ribbon:
   eureka:
     enabled: true
+namespace:
+  host: testjms1001.servicebus.windows.net
+  username: ReadWrite
+  password: BTr6/sSB6TfXwGUvKiaLZjpzfuvOY8m1XxPEawB864E=
 ---
 spring:
   profiles: docker
@@ -51,3 +55,7 @@ eureka:
 ribbon:
   eureka:
     enabled: true
+namespace:
+  host: testjms1001.servicebus.windows.net
+  username: ReadWrite
+  password: BTr6/sSB6TfXwGUvKiaLZjpzfuvOY8m1XxPEawB864E=

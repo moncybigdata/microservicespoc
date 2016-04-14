@@ -1,3 +1,4 @@
+---
 spring:
   profiles:
     active: cloud
@@ -7,45 +8,50 @@ spring:
     name: cloud
   cloud:
     config:
-      discovery:
-        enabled: true
       server:
         git:
-          uri: https://github.com/kbastani/spring-boot-microservice-config
-        health:
-          repositories:
-            movie:
-              label: master
-              profiles: cloud
-            rating:
-              label: master
-              profiles: cloud
+          uri: https://github.com/stansa/configuration
+          searchPaths: ConfigData
+encrypt:
+  failOnError: false
+eureka:
+  instance:
+    hostname: ${cloud_host}
+    nonSecurePort: 8888
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://${cloud_host}:8761/eureka/
 server:
   port: 8888
 info:
   description: Config Server
-  url: https://github.com/kbastani/spring-cloud-microservice-example
+  url: https://github.com/stansa/configuration
 ---
 spring:
   profiles:
-    name: docker
+    name: local
   cloud:
     config:
-      discovery:
-        enabled: true
       server:
         git:
-          uri: https://github.com/kbastani/spring-boot-microservice-config
-        health:
-          repositories:
-            movie:
-              label: master
-              profiles: cloud
-            rating:
-              label: master
-              profiles: cloud
+          uri: https://github.com/stansa/configuration
+          searchPaths: ConfigData
+encrypt:
+  failOnError: false
+eureka:
+  instance:
+    hostname: configServer
+    preferIpAddress: true
+    defaultZone: http://discovery:8761/eureka/
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://discovery:8761/eureka/
 server:
   port: 8888
 info:
   description: Config Server
-  url: https://github.com/kbastani/spring-cloud-microservice-example
+  url: https://github.com/stansa/configuration
